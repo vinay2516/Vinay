@@ -1,0 +1,49 @@
+# Simple Python Quiz Game
+
+def run_quiz(questions):
+    score = 0
+    for i, question in enumerate(questions, 1):
+        print(f"\nQuestion {i}: {question['question']}")
+        for option in question["options"]:
+            print(option)
+        answer = input("Enter your answer (A/B/C/D): ").strip().upper()
+        if answer == question["answer"]:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print(f"❌ Wrong! The correct answer is {question['answer']}")
+    print(f"\n Your final score: {score} out of {len(questions)}")
+
+
+# Quiz Questions
+quiz_questions = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A. Berlin", "B. Madrid", "C. Paris", "D. Rome"],
+        "answer": "C"
+    },
+    {
+        "question": "Which data type is immutable in Python?",
+        "options": ["A. List", "B. Dictionary", "C. Set", "D. Tuple"],
+        "answer": "D"
+    },
+    {
+        "question": "What is the keyword to define a function in Python?",
+        "options": ["A. function", "B. define", "C. def", "D. func"],
+        "answer": "C"
+    },
+    {
+        "question": "Who developed Python?",
+        "options": ["A. Dennis Ritchie", "B. James Gosling", "C. Guido van Rossum", "D. Bjarne Stroustrup"],
+        "answer": "C"
+    },
+    {
+        "question": "Which of the following is not a Python loop?",
+        "options": ["A. for", "B. while", "C. loop", "D. None of the above"],
+        "answer": "C"
+    },
+]
+
+# Start the Game
+print(" Welcome to the Python Quiz Game! ")
+run_quiz(quiz_questions)
